@@ -27,6 +27,8 @@ class PasscodePresenter: PasscodePresenterProtocol {
     required init(view: PasscodeViewProtocol, passcodeState: PasscodeState) {
         self.view = view
         self.passcodeState = passcodeState
+        
+        view.passcodeState(state: .inputPasscode)
     }
     
     func enterPasscode(number: Int) {

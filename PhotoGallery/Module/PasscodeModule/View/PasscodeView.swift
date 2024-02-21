@@ -66,7 +66,21 @@ class PasscodeView: UIViewController {
             keyboardStack.addArrangedSubview(buttonLine)
         }
         
+        (11...14).forEach {
+            let view = getCodeView(tag: $0)
+            codeStack.addArrangedSubview(view)
+        }
+        
         NSLayoutConstraint.activate([
+            
+            passcodeTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            passcodeTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            passcodeTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            
+            codeStack.topAnchor.constraint(equalTo: passcodeTitle.bottomAnchor, constant: 50),
+            codeStack.widthAnchor.constraint(equalToConstant: 140),
+            codeStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             keyboardStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             keyboardStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             keyboardStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -104,6 +118,19 @@ extension PasscodeView {
         }
         
         return stack
+    }
+    
+    private func getCodeView(tag: Int) -> UIView {
+        return {
+            $0.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            $0.layer.cornerRadius = 10
+            $0.layer.borderWidth = 2
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.tag = tag
+            
+            return $0
+        }(UIView())
     }
 }
 
