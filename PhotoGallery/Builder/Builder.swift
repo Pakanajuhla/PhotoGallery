@@ -12,6 +12,9 @@ protocol BuilderProtocol {
 }
 class Builder: BuilderProtocol {
     static func getPasscodeController() -> UIViewController {
-        PasscodeView()
+        let passcodeView = PasscodeView()
+        let presenter = PasscodePresenter(view: passcodeView, passcodeState: .inputPasscode)
+        passcodeView.passcodePresenter = presenter
+        return passcodeView
     }
 }

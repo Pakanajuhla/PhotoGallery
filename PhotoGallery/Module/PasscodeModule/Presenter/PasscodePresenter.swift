@@ -15,10 +15,40 @@ protocol PasscodePresenterProtocol: AnyObject {
     func setNewPasscode()
     func checkPasscode()
     func clearPasscode(state: PasscodeState)
+    
+    init(view: PasscodeViewProtocol, passcodeState: PasscodeState)
 }
 
-class PasscodePresenter{
+class PasscodePresenter: PasscodePresenterProtocol {
+    var passcode: [Int] = []
+    var view: PasscodeViewProtocol
+    var passcodeState: PasscodeState
     
+    required init(view: PasscodeViewProtocol, passcodeState: PasscodeState) {
+        self.view = view
+        self.passcodeState = passcodeState
+    }
+    
+    func enterPasscode(number: Int) {
+                
+    }
+    
+    func removeLastItemInPasscode() {
+        
+    }
+    
+    func setNewPasscode() {
+        
+    }
+    
+    func checkPasscode() {
+        
+    }
+    
+    func clearPasscode(state: PasscodeState) {
+        
+    }
+
 }
 
 enum PasscodeState: String {

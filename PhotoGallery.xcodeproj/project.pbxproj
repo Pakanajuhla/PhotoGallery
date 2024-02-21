@@ -14,6 +14,7 @@
 		8628B6BC2B85E32700A7602D /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6BB2B85E32700A7602D /* PasscodeView.swift */; };
 		8628B6C42B85F64400A7602D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C32B85F64400A7602D /* Builder.swift */; };
 		8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C52B85FA2200A7602D /* PasscodePresenter.swift */; };
+		8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C82B86289C00A7602D /* UIView.ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8628B6BB2B85E32700A7602D /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
 		8628B6C32B85F64400A7602D /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		8628B6C52B85FA2200A7602D /* PasscodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePresenter.swift; sourceTree = "<group>"; };
+		8628B6C82B86289C00A7602D /* UIView.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		8628B6A32B85E09100A7602D /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				8628B6C72B86287000A7602D /* Extension */,
 				8628B6C22B85F63300A7602D /* Builder */,
 				8628B6B82B85E24C00A7602D /* Module */,
 				8628B6BD2B85F40D00A7602D /* Applications */,
@@ -132,6 +135,14 @@
 				8628B6C32B85F64400A7602D /* Builder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		8628B6C72B86287000A7602D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8628B6C82B86289C00A7602D /* UIView.ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				8628B6A72B85E09100A7602D /* SceneDelegate.swift in Sources */,
 				8628B6C42B85F64400A7602D /* Builder.swift in Sources */,
 				8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */,
+				8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
