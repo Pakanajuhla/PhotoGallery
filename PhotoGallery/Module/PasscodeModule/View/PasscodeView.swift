@@ -48,12 +48,22 @@ class PasscodeView: UIViewController {
         .configure(view: $0) { button in
             button.widthAnchor.constraint(equalToConstant: 36).isActive = true
             button.heightAnchor.constraint(equalToConstant: 36).isActive = true
-            button.setImage(UIImage .appDelete, for: .normal)
+            button.setBackgroundImage(.appDelete, for: .normal)
         }
-    }(UIButton())
+    }(UIButton(primaryAction: deleteCodeAction))
     
+    lazy var enterCodeAction = UIAction { [weak self] sender in
+        guard let self = self, let sender = sender.sender as? UIButton else { return }
+        self.passcodePresenter.enterPasscode(number: sender.tag)
+    }
     
-
+    lazy var deleteCodeAction = UIAction { [weak self] sender in
+        guard let self = self, let sender = sender.sender as? UIButton else { return }
+        self.passcodePresenter.removeLastItemInPasscode()
+    }
+    
+//MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appMain
@@ -90,7 +100,6 @@ class PasscodeView: UIViewController {
             deleteButton.bottomAnchor.constraint(equalTo: keyboardStack.bottomAnchor, constant: -25),
         ])
     }
-  
 }
 
 //MARK: - Extensions
@@ -108,7 +117,7 @@ extension PasscodeView {
     private func setGirizontalNumStack(range: [Int]) -> UIStackView {
         let stack = getGirizontalNumStack()
         range.forEach {
-            let numButton = UIButton(primaryAction: nil)
+            let numButton = UIButton(primaryAction: enterCodeAction)
             numButton.tag = $0
             numButton.setTitle("\($0)", for: .normal)
             numButton.setTitleColor(.white, for: .normal)
@@ -140,7 +149,11 @@ extension PasscodeView: PasscodeViewProtocol {
     }
     
     func enterCode(code: [Int]) {
-        print(code)
+        let tag = code.count + 10
+        (tag...14).forEach {
+            view.viewWithTag($0)?.backgroundColor = .none
+        }
+        view.viewWithTag(tag)?.backgroundColor = .white
     }
     
 }

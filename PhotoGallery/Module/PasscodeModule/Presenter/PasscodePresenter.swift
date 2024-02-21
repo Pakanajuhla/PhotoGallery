@@ -20,7 +20,22 @@ protocol PasscodePresenterProtocol: AnyObject {
 }
 
 class PasscodePresenter: PasscodePresenterProtocol {
-    var passcode: [Int] = []
+    
+    var passcode: [Int] = [] {
+        didSet {
+            if passcode.count == 4 {
+                switch passcodeState {
+                case .inputPasscode:
+                    self.checkPasscode()
+                case .setNewPasscode:
+                    self.setNewPasscode()
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
     var view: PasscodeViewProtocol
     var passcodeState: PasscodeState
     
@@ -32,11 +47,17 @@ class PasscodePresenter: PasscodePresenterProtocol {
     }
     
     func enterPasscode(number: Int) {
-                
+        if passcode.count < 4 {
+            self.passcode.append(number)
+            view.enterCode(code: passcode)
+        }
     }
     
     func removeLastItemInPasscode() {
-        
+        if !passcode.isEmpty {
+            self.passcode.removeLast()
+            view.enterCode(code: passcode)
+        }
     }
     
     func setNewPasscode() {
