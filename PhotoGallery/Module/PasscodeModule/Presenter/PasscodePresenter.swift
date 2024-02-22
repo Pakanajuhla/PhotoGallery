@@ -9,6 +9,7 @@ import UIKit
 
 protocol PasscodePresenterProtocol: AnyObject {
     var passcode: [Int] { get set }
+    var templatePasscode: [Int]? { get set }
     
     func enterPasscode(number: Int)
     func removeLastItemInPasscode()
@@ -16,10 +17,16 @@ protocol PasscodePresenterProtocol: AnyObject {
     func checkPasscode()
     func clearPasscode(state: PasscodeState)
     
-    init(view: PasscodeViewProtocol, passcodeState: PasscodeState)
+    init(view: PasscodeViewProtocol, passcodeState: PasscodeState, keychainManager: KeychainManagerProtocol)
 }
 
 class PasscodePresenter: PasscodePresenterProtocol {
+    var templatePasscode: [Int]?
+    
+    
+    var view: PasscodeViewProtocol
+    var passcodeState: PasscodeState
+    var keychainManager: KeychainManagerProtocol
     
     var passcode: [Int] = [] {
         didSet {
@@ -36,15 +43,17 @@ class PasscodePresenter: PasscodePresenterProtocol {
         }
     }
     
-    var view: PasscodeViewProtocol
-    var passcodeState: PasscodeState
+    //MARK: - Init
     
-    required init(view: PasscodeViewProtocol, passcodeState: PasscodeState) {
+    required init(view: PasscodeViewProtocol, passcodeState: PasscodeState, keychainManager: KeychainManagerProtocol) {
         self.view = view
         self.passcodeState = passcodeState
+        self.keychainManager = keychainManager
         
-        view.passcodeState(state: .inputPasscode)
+        view.passcodeState(state: passcodeState)
     }
+    
+    //MARK: - Functions
     
     func enterPasscode(number: Int) {
         if passcode.count < 4 {
@@ -61,18 +70,47 @@ class PasscodePresenter: PasscodePresenterProtocol {
     }
     
     func setNewPasscode() {
-        
+        if templatePasscode != nil {
+            if passcode == templatePasscode! {
+                
+                let stringPasscode = passcode.map { String($0) }.joined()
+                keychainManager.save(key: KeychainKeys.passcode.rawValue, value: stringPasscode)
+                print(stringPasscode)
+                print("saved!")
+                // -> переход на другой модуль
+            } else {
+                self.view.passcodeState(state: .codeMismatch)
+            }
+        } else {
+            templatePasscode = passcode
+            self.clearPasscode(state: .repeadPasscode)
+        }
     }
     
     func checkPasscode() {
-        
+        let checkPasscodeResult = keychainManager.load(key: KeychainKeys.passcode.rawValue)
+        switch checkPasscodeResult {
+            
+        case .success(let code):
+            if self.passcode == code.digits {
+                print("succes")
+            } else {
+                self.clearPasscode(state: .wrongPasscode)
+            }
+        case .failure(let err):
+            print(err.localizedDescription)
+        }
     }
     
     func clearPasscode(state: PasscodeState) {
-        
+        self.passcode = []
+        self.view.enterCode(code: [])
+        view.passcodeState(state: state)
     }
 
 }
+
+//MARK: - Enum
 
 enum PasscodeState: String {
     case inputPasscode, wrongPasscode, setNewPasscode, repeadPasscode, codeMismatch
@@ -89,7 +127,7 @@ enum PasscodeState: String {
         case .repeadPasscode:
             return "Повторите код"
         case .codeMismatch:
-            return "Коды не совпадает"
+            return "Коды не совпадают"
         }
     }
 }

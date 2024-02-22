@@ -15,6 +15,9 @@
 		8628B6C42B85F64400A7602D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C32B85F64400A7602D /* Builder.swift */; };
 		8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C52B85FA2200A7602D /* PasscodePresenter.swift */; };
 		8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6C82B86289C00A7602D /* UIView.ext.swift */; };
+		8628B6CC2B877C4100A7602D /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6CB2B877C4100A7602D /* KeychainManager.swift */; };
+		8628B6CF2B877D4F00A7602D /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 8628B6CE2B877D4F00A7602D /* KeychainAccess */; };
+		8628B6D12B8787F900A7602D /* StringProtocol.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6D02B8787F900A7602D /* StringProtocol.ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,8 @@
 		8628B6C32B85F64400A7602D /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		8628B6C52B85FA2200A7602D /* PasscodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePresenter.swift; sourceTree = "<group>"; };
 		8628B6C82B86289C00A7602D /* UIView.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.ext.swift; sourceTree = "<group>"; };
+		8628B6CB2B877C4100A7602D /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		8628B6D02B8787F900A7602D /* StringProtocol.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8628B6CF2B877D4F00A7602D /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,7 @@
 		8628B6A32B85E09100A7602D /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				8628B6CA2B877C1C00A7602D /* KeychainManager */,
 				8628B6C72B86287000A7602D /* Extension */,
 				8628B6C22B85F63300A7602D /* Builder */,
 				8628B6B82B85E24C00A7602D /* Module */,
@@ -141,8 +148,17 @@
 			isa = PBXGroup;
 			children = (
 				8628B6C82B86289C00A7602D /* UIView.ext.swift */,
+				8628B6D02B8787F900A7602D /* StringProtocol.ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8628B6CA2B877C1C00A7602D /* KeychainManager */ = {
+			isa = PBXGroup;
+			children = (
+				8628B6CB2B877C4100A7602D /* KeychainManager.swift */,
+			);
+			path = KeychainManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +177,9 @@
 			dependencies = (
 			);
 			name = PhotoGallery;
+			packageProductDependencies = (
+				8628B6CE2B877D4F00A7602D /* KeychainAccess */,
+			);
 			productName = PhotoGallery;
 			productReference = 8628B6A12B85E09100A7602D /* PhotoGallery.app */;
 			productType = "com.apple.product-type.application";
@@ -189,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 8628B6982B85E09000A7602D;
+			packageReferences = (
+				8628B6CD2B877D4F00A7602D /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 8628B6A22B85E09100A7602D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,6 +239,8 @@
 			files = (
 				8628B6BC2B85E32700A7602D /* PasscodeView.swift in Sources */,
 				8628B6A52B85E09100A7602D /* AppDelegate.swift in Sources */,
+				8628B6CC2B877C4100A7602D /* KeychainManager.swift in Sources */,
+				8628B6D12B8787F900A7602D /* StringProtocol.ext.swift in Sources */,
 				8628B6A72B85E09100A7602D /* SceneDelegate.swift in Sources */,
 				8628B6C42B85F64400A7602D /* Builder.swift in Sources */,
 				8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */,
@@ -433,6 +457,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8628B6CD2B877D4F00A7602D /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8628B6CE2B877D4F00A7602D /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8628B6CD2B877D4F00A7602D /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8628B6992B85E09000A7602D /* Project object */;
 }
