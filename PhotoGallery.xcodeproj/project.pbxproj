@@ -24,6 +24,10 @@
 		8628B6E62B8B274100A7602D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6E52B8B274100A7602D /* TabBarView.swift */; };
 		8628B6E82B8B278000A7602D /* TabBarViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6E72B8B278000A7602D /* TabBarViewPresenter.swift */; };
 		8628B6EA2B8BA60800A7602D /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6E92B8BA60800A7602D /* MainScreenPresenter.swift */; };
+		8628B6EC2B8CEFB700A7602D /* MainPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6EB2B8CEFB700A7602D /* MainPostCell.swift */; };
+		8628B6EE2B8CF01F00A7602D /* MainPostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6ED2B8CF01F00A7602D /* MainPostHeader.swift */; };
+		8628B6F02B8CF22F00A7602D /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6EF2B8CF22F00A7602D /* PostItem.swift */; };
+		8628B6F22B8D1B9500A7602D /* Date.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F12B8D1B9500A7602D /* Date.ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		8628B6E52B8B274100A7602D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		8628B6E72B8B278000A7602D /* TabBarViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewPresenter.swift; sourceTree = "<group>"; };
 		8628B6E92B8BA60800A7602D /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		8628B6EB2B8CEFB700A7602D /* MainPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostCell.swift; sourceTree = "<group>"; };
+		8628B6ED2B8CF01F00A7602D /* MainPostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostHeader.swift; sourceTree = "<group>"; };
+		8628B6EF2B8CF22F00A7602D /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
+		8628B6F12B8D1B9500A7602D /* Date.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 			children = (
 				8628B6C82B86289C00A7602D /* UIView.ext.swift */,
 				8628B6D02B8787F900A7602D /* StringProtocol.ext.swift */,
+				8628B6F12B8D1B9500A7602D /* Date.ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				8628B6DB2B8B263300A7602D /* MainScreenView.swift */,
+				8628B6EB2B8CEFB700A7602D /* MainPostCell.swift */,
+				8628B6ED2B8CF01F00A7602D /* MainPostHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 		8628B6D82B8B255100A7602D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8628B6EF2B8CF22F00A7602D /* PostItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,17 +357,21 @@
 			files = (
 				8628B6E82B8B278000A7602D /* TabBarViewPresenter.swift in Sources */,
 				8628B6BC2B85E32700A7602D /* PasscodeView.swift in Sources */,
+				8628B6F02B8CF22F00A7602D /* PostItem.swift in Sources */,
 				8628B6A52B85E09100A7602D /* AppDelegate.swift in Sources */,
+				8628B6EE2B8CF01F00A7602D /* MainPostHeader.swift in Sources */,
 				8628B6CC2B877C4100A7602D /* KeychainManager.swift in Sources */,
 				8628B6D12B8787F900A7602D /* StringProtocol.ext.swift in Sources */,
 				8628B6DC2B8B263300A7602D /* MainScreenView.swift in Sources */,
 				8628B6A72B85E09100A7602D /* SceneDelegate.swift in Sources */,
 				8628B6C42B85F64400A7602D /* Builder.swift in Sources */,
+				8628B6F22B8D1B9500A7602D /* Date.ext.swift in Sources */,
 				8628B6E42B8B26BF00A7602D /* CameraView.swift in Sources */,
 				8628B6EA2B8BA60800A7602D /* MainScreenPresenter.swift in Sources */,
 				8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */,
 				8628B6E22B8B26A800A7602D /* FavoriteView.swift in Sources */,
 				8628B6E62B8B274100A7602D /* TabBarView.swift in Sources */,
+				8628B6EC2B8CEFB700A7602D /* MainPostCell.swift in Sources */,
 				8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
