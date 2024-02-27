@@ -28,6 +28,7 @@
 		8628B6EE2B8CF01F00A7602D /* MainPostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6ED2B8CF01F00A7602D /* MainPostHeader.swift */; };
 		8628B6F02B8CF22F00A7602D /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6EF2B8CF22F00A7602D /* PostItem.swift */; };
 		8628B6F22B8D1B9500A7602D /* Date.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F12B8D1B9500A7602D /* Date.ext.swift */; };
+		8628B6F42B8E2A2200A7602D /* UIApplication.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F32B8E2A2200A7602D /* UIApplication.ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		8628B6ED2B8CF01F00A7602D /* MainPostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostHeader.swift; sourceTree = "<group>"; };
 		8628B6EF2B8CF22F00A7602D /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		8628B6F12B8D1B9500A7602D /* Date.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.ext.swift; sourceTree = "<group>"; };
+		8628B6F32B8E2A2200A7602D /* UIApplication.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				8628B6C82B86289C00A7602D /* UIView.ext.swift */,
 				8628B6D02B8787F900A7602D /* StringProtocol.ext.swift */,
 				8628B6F12B8D1B9500A7602D /* Date.ext.swift */,
+				8628B6F32B8E2A2200A7602D /* UIApplication.ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				8628B6E62B8B274100A7602D /* TabBarView.swift in Sources */,
 				8628B6EC2B8CEFB700A7602D /* MainPostCell.swift in Sources */,
 				8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */,
+				8628B6F42B8E2A2200A7602D /* UIApplication.ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
