@@ -85,6 +85,11 @@ extension MainScreenView: UICollectionViewDataSource, UICalendarViewDelegate, UI
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPostCell.reuseId, for: indexPath) as? MainPostCell
         else { return UICollectionViewCell() }
         
+        if let item = presenter.posts?[indexPath.section].items[indexPath.row] {
+            cell.configureCell(item: item)
+        }
+        
+        
         cell.backgroundColor = .gray
         return cell
     }
