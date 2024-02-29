@@ -29,6 +29,8 @@
 		8628B6F02B8CF22F00A7602D /* PostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6EF2B8CF22F00A7602D /* PostItem.swift */; };
 		8628B6F22B8D1B9500A7602D /* Date.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F12B8D1B9500A7602D /* Date.ext.swift */; };
 		8628B6F42B8E2A2200A7602D /* UIApplication.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F32B8E2A2200A7602D /* UIApplication.ext.swift */; };
+		8628B6F82B9080C100A7602D /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F72B9080C100A7602D /* TagCollectionView.swift */; };
+		8628B6FA2B90B22200A7602D /* TagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628B6F92B90B22200A7602D /* TagCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		8628B6EF2B8CF22F00A7602D /* PostItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItem.swift; sourceTree = "<group>"; };
 		8628B6F12B8D1B9500A7602D /* Date.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.ext.swift; sourceTree = "<group>"; };
 		8628B6F32B8E2A2200A7602D /* UIApplication.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.ext.swift; sourceTree = "<group>"; };
+		8628B6F72B9080C100A7602D /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		8628B6F92B90B22200A7602D /* TagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		8628B6A32B85E09100A7602D /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
+				8628B6F52B90809000A7602D /* Helpers */,
 				8628B6CA2B877C1C00A7602D /* KeychainManager */,
 				8628B6C72B86287000A7602D /* Extension */,
 				8628B6C22B85F63300A7602D /* Builder */,
@@ -282,6 +287,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8628B6F52B90809000A7602D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8628B6F62B90809B00A7602D /* TagCollection */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8628B6F62B90809B00A7602D /* TagCollection */ = {
+			isa = PBXGroup;
+			children = (
+				8628B6F72B9080C100A7602D /* TagCollectionView.swift */,
+				8628B6F92B90B22200A7602D /* TagCollectionCell.swift */,
+			);
+			path = TagCollection;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -369,12 +391,14 @@
 				8628B6A72B85E09100A7602D /* SceneDelegate.swift in Sources */,
 				8628B6C42B85F64400A7602D /* Builder.swift in Sources */,
 				8628B6F22B8D1B9500A7602D /* Date.ext.swift in Sources */,
+				8628B6FA2B90B22200A7602D /* TagCollectionCell.swift in Sources */,
 				8628B6E42B8B26BF00A7602D /* CameraView.swift in Sources */,
 				8628B6EA2B8BA60800A7602D /* MainScreenPresenter.swift in Sources */,
 				8628B6C62B85FA2200A7602D /* PasscodePresenter.swift in Sources */,
 				8628B6E22B8B26A800A7602D /* FavoriteView.swift in Sources */,
 				8628B6E62B8B274100A7602D /* TabBarView.swift in Sources */,
 				8628B6EC2B8CEFB700A7602D /* MainPostCell.swift in Sources */,
+				8628B6F82B9080C100A7602D /* TagCollectionView.swift in Sources */,
 				8628B6C92B86289C00A7602D /* UIView.ext.swift in Sources */,
 				8628B6F42B8E2A2200A7602D /* UIApplication.ext.swift in Sources */,
 			);

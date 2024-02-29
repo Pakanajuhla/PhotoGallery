@@ -20,8 +20,8 @@ class PostDate: Identifiable {
     static func getMockDate() -> [PostDate] {
         [
             PostDate(items: [
-                PostItem(photos: ["image1, image2"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
-                PostItem(photos: ["image3"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
+                PostItem(photos: ["image1"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
+                PostItem(photos: ["image2"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
                 PostItem(photos: ["image3"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins.")
                 
             ], date: Date()),
@@ -33,7 +33,7 @@ class PostDate: Identifiable {
             ], date: Date().addingTimeInterval(-86400)),
             
             PostDate(items: [
-                PostItem(photos: ["image2, image3"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
+                PostItem(photos: ["image1"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
                 PostItem(photos: ["image3"], comments: nil, tags: ["Красивое фото!"], description: "He deals the cards as a meditation - And those he plays never suspect - He doesn't play for the money he wins - He don't play for respect - He deals"),
             ], date: Date().addingTimeInterval(-172800))
         ]

@@ -27,7 +27,7 @@ class MainScreenView: UIViewController {
     }(UIView())
     
     private lazy var menuAppName: UILabel = {
-        $0.text = "PhotoGallery"
+        $0.text = "photoGallery"
         $0.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         $0.textColor = .white
         $0.frame = CGRect(x: 50, y: menuViewHeight - 40, width: view.bounds.width, height: 30)
